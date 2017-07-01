@@ -1,0 +1,57 @@
+{% load staticfiles %}
+
+
+<html>
+<head>
+	<meta charset="utf-8" />
+<link href="{% static 'home/images/favicon.png' %}" rel="icon" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{% static 'home/mobile1.css' %}" type="text/css" rel="stylesheet" media="screen and (max-width: 768px)" />
+<link href="{% static 'home/desktop1.css' %}" type="text/css" rel="stylesheet" media="screen and (min-width: 768px)" />
+<style>
+
+</style>
+</head>
+
+<body>
+<div class="navbar">
+	<ul>
+	  <li><h1>nil.co</h1><p class="caption">The ultimate forum for coders</p></li>
+	  <li class="right"><a href="/home/signup/" class="signup">Sign Up</a></li>
+	</ul>
+</div>
+
+<!--<div class="head">
+<h1>nil.co</h1>
+<p>The ultimate forum for coders</p>
+</div>
+
+<div class="linker">
+<a class="toplink"href="signup.html"><span></span>Sign Up</a>
+</div>  -->
+
+<div class="body ">
+<h2>Welcome Back!</h2>
+<form method="POST"> {% csrf_token %}
+	{% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+	<input type="submit" value="Log In">
+	<br><pre><a class="links" href="/home/signup/"><b>Do not have an account?</b></a></pre>
+</form>
+</div>
+
+<div class="foot">
+created by Nilay Pathak
+</div>
+
+</body>
+
+</html>
