@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<meta charset="utf-8" />
+	<script type="text/javascript">
+		function boldSelection () {
+			
+			var textarea = document.getElementById("myArea");
+			if ('selectionStart' in textarea) {
+					// check whether some text is selected in the textarea
+				if (textarea.selectionStart != textarea.selectionEnd) {
+					var newText = textarea.value.substring (0, textarea.selectionStart) + 
+						"**" + textarea.value.substring  (textarea.selectionStart, textarea.selectionEnd) + "**" +
+						textarea.value.substring (textarea.selectionEnd);
+					textarea.value = newText;
+				}
+				else {
+					textarea.value +="**";
+					document.getElementById("bol").classList.toggle("selected");
+				}
+			}
+			
+		}
+		function italicsSelection () {
+			
+			var textarea = document.getElementById("myArea");
+			if ('selectionStart' in textarea) {
+					// check whether some text is selected in the textarea
+				if (textarea.selectionStart != textarea.selectionEnd) {
+					var newText = textarea.value.substring (0, textarea.selectionStart) + 
+						"//" + textarea.value.substring  (textarea.selectionStart, textarea.selectionEnd) + "//" +
+						textarea.value.substring (textarea.selectionEnd);
+					textarea.value = newText;
+				}
+				else{
+					textarea.value +="//";
+					document.getElementById("italic").classList.toggle("selected");
+				}
+			}
+			
+		}
+		function underlineSelection () {
+			
+			var textarea = document.getElementById("myArea");
+			if ('selectionStart' in textarea) {
+					// check whether some text is selected in the textarea
+				if (textarea.selectionStart != textarea.selectionEnd) {
+					var newText = textarea.value.substring (0, textarea.selectionStart) + 
+						"__" + textarea.value.substring  (textarea.selectionStart, textarea.selectionEnd) + "__" +
+						textarea.value.substring (textarea.selectionEnd);
+					textarea.value = newText;
+				}
+				else{
+					textarea.value +="__";
+					document.getElementById("under").classList.toggle("selected");
+				}
+			}
+			
+		}
+		function reply (){
+		
+		var textarea = document.getElementById("myArea");
+		var str=textarea.value;
+		var res=str.split("**");
+		var i;
+		var result="";
+		var result2="";
+		var result3="";
+		for(i=0;res[i]!=undefined;i++)
+		{
+			if(i%2==0)
+			result=result+res[i]+"<b>";
+			else
+			result=result+res[i]+"</b>";
+		}
+		var res2=result.split("//");
+		for(i=0;res2[i]!=undefined;i++)
+		{
+			if(i%2==0)
+			result2=result2+res2[i]+"<i>";
+			else
+			result2=result2+res2[i]+"</i>";
+		}
+		var res3=result2.split("__");
+		for(i=0;res3[i]!=undefined;i++)
+		{
+			if(i%2==0)
+			result3=result3+res3[i]+"<u>";
+			else
+			result3=result3+res3[i]+"</u>";
+		}
+		document.getElementById("final").innerHTML = "output= "+ result3;
+		}
+		
+		</script>
+<style>
+.notselected{
+background-color:white;}
+.selected{
+background-color:red;}
+</style>
+</head>
+<body>
+	<div>
+	<button onclick="boldSelection ()" class="notselected" id="bol"><b>B</b></button>
+	<button onclick="italicsSelection ()"class="notselected" id="italic"><i>I</i></button>
+	<button onclick="underlineSelection ()"class="notselected" id="under"><u>U</u></button><br />
+	<textarea id="myArea" style="height:200px; width:800px;">Select some text within this field.</textarea><br />
+	<button onclick="reply ()"><u>Reply</u></button>
+	</div>
+	<div id="final">
+	</div>
+</body>
+</html>
