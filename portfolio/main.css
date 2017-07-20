@@ -1,0 +1,246 @@
+body,html{
+    margin:0;
+    padding:0;
+}
+
+.container{
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    mix-blend-mode: lighten;
+    background-color: #e7e7e7;
+    overflow: hidden;
+}
+.container:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    display: block;
+    background: url(https://s-media-cache-ak0.pinimg.com/originals/d9/83/b4/d983b43f36e66191137a0b235057fa0d.png) center center fixed no-repeat;
+    background-size:cover;
+    width: 100%;
+    height: 100%;
+
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+.bg{
+    mix-blend-mode: multiply;
+    position: absolute;
+    right:0;
+    top:0;
+    width:30%;
+}
+
+.first-section, .second-section, .third-section{
+    display: block;
+    height:100%;
+    width:100%;
+}
+.navbar{
+    display: flex;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    align-items: center;
+    justify-content: space-around;
+    padding:0;
+    margin:0;
+    z-index:20;
+}
+
+
+
+.left , .right{
+    background: #46349b;
+    color: white;
+    display: flex;
+    width: 100%;
+    flex:1;
+    align-items:center;
+    justify-content: space-around;
+    mix-blend-mode: darken;
+}
+
+.navbar h1{
+    font-size:1.4rem;
+}
+.content-wrapper{
+    background-color: #43329b;
+    display: block;
+    position: absolute;
+    top:calc( 50% + 60pt );
+    left:35%;
+    transform:translate(-50%,-50%);
+    width:86vh;
+    height:55vh;
+    mix-blend-mode: darken;
+}
+.content{
+    background-color: #fff;
+    background: url(../img/quote1.jpg) center center no-repeat;
+    background-size: contain;
+    mix-blend-mode: lighten;
+    width:95%;
+    height:90%;
+    position: absolute;
+    top:calc( 50% + 60pt );
+    left:35%;
+    transform:translate(-50%,-50%);
+    height:50%;
+}
+a, a:visited,a:active{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    transform:scale(1.02);
+}
+.first-section{
+    height:100%;
+    width:100%;
+    background: #e7e7e7;
+    display: block;
+    z-index:0;
+}
+.second-section{
+    height:100%;
+    width:100%;
+    background: url(../img/221b.jpg);
+    display: block;
+    z-index:0;
+}
+.third-section{
+    height:100%;
+    width:100%;
+    background: url(../img/violin2.jpg) center center no-repeat;
+    background-size:cover;
+    display: block;
+    z-index:0;
+}
+.first-section h1{
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    position: absolute;
+    top:30%;
+    left:30%;
+    width:40%;
+    transform:translate( -50% , -50% );
+    text-align: center;
+    font-size:2.5rem;
+}
+.first-section p{
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    position: absolute;
+    top:60%;
+    left:30%;
+    width:40%;
+    transform: translate( -50% , -50% );
+    text-align: center;
+    font-size:1.15rem;
+}
+.first-section img{
+    position: absolute;
+    top: 50%;
+    right:25%;
+    transform:translate( 50% , -50% );
+    height: 80%;
+    mix-blend-mode: hard-light;
+}
+
+.address-wrapper, .hobbies-wrapper{
+    display: flex;
+    background: white;
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:35%;
+    height:65%;
+    transform:translate( -50%, -50% );
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    mix-blend-mode: lighten;
+    text-align: center;
+}
+.address-wrapper h1, .address-wrapper p, .hobbies-wrapper h1, .hobbies-wrapper p{
+    font-family:'Open Sans', sans-serif;
+}
+
+.address-wrapper h1{
+    font-size:2.8rem;
+}
+.address-wrapper p{
+    font-size:2.2rem;
+    margin:0;
+}
+.hobbies-wrapper{
+    width:50%;
+}
+.hobbies-wrapper h1{
+    font-size:2.8rem;
+}
+.hobbies-wrapper p{
+    padding:10pt;
+    font-size:1.6rem;
+    margin:0;
+}
+.address-bg{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:40%;
+    height:75%;
+    transform:translate( -50%, -50% );
+    background: #63362b;
+    mix-blend-mode: color-dodge;
+}
+
+.hobbies-bg{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:55%;
+    height:60%;
+    transform:translate( -50%, -50% );
+    background: #11114e;
+    mix-blend-mode: lighten;
+}
+.hobbies-wrapper{
+    height:50%;
+    background: rgba(255,255,255,0.8);
+    color:black;
+}
+
+.social{
+    margin:20pt 10pt 0;
+    width:30pt;
+    transition: 300ms ease;
+}
+
+.social:hover{
+    transform:scale(1.1);
+}
+
+@media screen and (max-width: 1300px){
+    .first-section h1{
+        font-size:2rem;
+    }
+    .first-section p{
+        font-size: 1rem;
+    }
+    .social{
+        width:25pt;
+    }
+}
